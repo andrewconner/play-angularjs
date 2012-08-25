@@ -3,28 +3,15 @@ package controllers
 import play.api._
 import play.api.mvc._
 
-object Application extends Controller with AngularGenerators {
+object Application extends Controller {
   
-  def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+  // For server-side defined routes that hand off rending to
+  // angular.js
+  def angularApp = Action {
+    Ok(views.html.angular())
   }
-  def view1 = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
+  def index = angularApp
+  def view1 = angularApp
+  def view2 = angularApp
 
-  def javascriptRoutes = Action { implicit request =>
-    Ok(
-      Routes.javascriptRouter("jsRoutes")(
-        routes.javascript.Application.index
-      )
-    ).as("text/javascript") 
-  }
-
-  def angularControllers = Action { implicit request =>
-    Ok(
-      generateControllers("My1","My2")
-    ).as("text/javascript")
-  }
-
-  
 }

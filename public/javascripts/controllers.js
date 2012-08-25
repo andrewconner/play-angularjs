@@ -2,10 +2,10 @@
 /* App Controllers */
 
 
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
+function My1Ctrl() {}
+My1Ctrl.$inject = [];
 
 
-function MyCtrl2() {
+function My2Ctrl() {
 }
-MyCtrl2.$inject = [];
+My2Ctrl.$inject = [];
