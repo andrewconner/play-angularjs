@@ -1,0 +1,25 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html ng-app="playAngularExample">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/lib/jquery-1.7.1.min.js")" type="text/javascript"></script>
+          <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+
+
+        <!-- Angular.js includes -->
+        <script src="@routes.Assets.at("javascripts/lib/angular/angular.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/app.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/services.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/filters.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/directives.js")" type="text/javascript"></script>
+        <script src="@routes.Application.angularControllers" type="text/javascript"></script>
+    </head>
+    <body>
+        @content
+    </body>
+</html>
